@@ -7,10 +7,13 @@ export default function Topbar() {
   const user = true;
   // const history = useHistory();
 
- const handleclick=()=>{
+ const handleclick=(e)=>{
+  e.preventDefault()
   
   localStorage.removeItem('success')
   localStorage.removeItem('User')
+  window.location.replace("/login")
+
 
  }
 
@@ -44,7 +47,7 @@ export default function Topbar() {
               WRITE
             </Link>
           </li>
-          {user && <Link className="topListItem link" to={'/login'} onClick={handleclick}>LOGOUT</Link>}
+          {user && (<Link className="topListItem link" to='/login' onClick={handleclick}>LOGOUT</Link>)}
         </ul>
       </div>
       <div className="topRight">

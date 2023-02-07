@@ -56,6 +56,7 @@ const handlesubmit =async(e)=>{
 
 
   return (
+   <div className="contain">
     <div className="write">
 
       {file && 
@@ -68,10 +69,10 @@ const handlesubmit =async(e)=>{
 
       }
       <form className="writeForm" onSubmit={handlesubmit}>
-        <div className="writeFormGroup">
           <label htmlFor="fileInput">
             <i className="writeIcon fas fa-plus"></i>
           </label>
+        <div className="writeFormGroup">
           <input id="fileInput" onChange={(e)=>setfile(e.target.files[0])} type="file" style={{ display: "none" } } />
           <input
             className="writeInput"
@@ -81,7 +82,8 @@ const handlesubmit =async(e)=>{
             onChange={(e)=>setTitle(e.target.value)}
           />
         </div>
-        <div className="writeFormGroup">
+          {/* <hr /> */}
+        <div className="writeFormGroup my-5">
           <textarea
             className="writeInput writeText"
             placeholder="Tell your story"
@@ -96,5 +98,7 @@ const handlesubmit =async(e)=>{
         </div>
       </form>
     </div>
+    </div>
+   
   );
 }

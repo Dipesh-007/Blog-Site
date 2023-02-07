@@ -18,7 +18,7 @@ function App() {
 
   const currentUser = localStorage.getItem('success');
   // const currentUser =true
-// console.log(currentUser)
+console.log(currentUser)
 
   return (
     <Router >
@@ -37,7 +37,7 @@ function App() {
         <Route path="/post/:id">
           <Single />
         </Route>
-        <Route path="/write">{ <Write /> }</Route>
+        <Route path="/write">{ currentUser ? <Write/> : <Login/>}</Route>
         <Route path="/settings">
           {currentUser ? <Settings /> : <Login />}
         </Route>
